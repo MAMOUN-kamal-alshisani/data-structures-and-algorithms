@@ -1,6 +1,6 @@
 ## code test :
 
-![](d6K3x7p.jpg)
+![](codechallenge-07.jpg)
 
 ## white board
 ![](code-07.jpg)
