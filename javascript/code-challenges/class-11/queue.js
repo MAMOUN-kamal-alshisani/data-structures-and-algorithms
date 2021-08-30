@@ -1,75 +1,72 @@
-// 'use strict';
+'use strict';
 
+const Stack=require('./stack');
 
-// class Queue{
+class Queue{
 
-//     constructor(value,next=null){
-//         this.value=value;
-//         this.next=next;
-//         this.top=null
-//         this.front=null;
-//         this.back=null;
-//     }
+    constructor(value,next=null){
+        this.value=value;
+        this.next=next;
+        this.top=null
+        this.front=null;
+this.Spush = new Stack()
+this.Spop = new Stack()
+        this.back=null;
+       this.size=0;
+    }
 
-//     enqueue(value){
-//         let queue=new Queue(value);
-//         if(!this.front){
-//             this.front=queue;
-//             this.back=queue;
-//         }else{
-//             this.back.next=queue;
-//             this.back=queue;
-//         }
-//     }
-//     dequeue(){
-//         if(!this.front){
-//             throw new Error(' Queue is empty'); 
-//         }
-//         let LastNode=this.front;
-//         if(this.front===this.back){
-//             this.back=null;
-//         }
-//         this.front=this.front.next;
+    enqueue(value){
+        this.Spush.push(value);
+        this.size = this.Spush.length + this.Spop.length;
+    }
+    dequeue(){
+        if (this.Spop.length > 0) {
+            this.size = this.Spush.length + this.Spop.length - 1;
+            return this.Spop.pop();
+    }
+    while(this.Spush.length > 0) {
+        this.Spop.push(this.Spush.pop())
+    }
 
-//         return LastNode.value;
-//     }
+    this.size = this.Spush.length + this.Spop.length - 1;
+    return this.Spop.pop();
+    }
+    peek(){
+        let value;
+        if (this.front) {
+            value=this.front.value;
+            return value
+        }
+        throw new Error(' Queue is empty'); 
+    }
 
-//     peek(){
-//         let value;
-//         if (this.front) {
-//             value=this.front.value;
-//             return value
-//         }
-//         throw new Error(' Queue is empty'); 
-//     }
-
-//     isEmpty(){
-//         if(!this.front){
-//             throw new Error('Queue is empty'); 
-//         }
-//         return 'the Queue is not empty!'
-//     }
-//     printList(){
-//         let current = this.head;
+    isEmpty(){
+        if(!this.front){
+            throw new Error('Queue is empty'); 
+        }
+        return 'the Queue is not empty!'
+    }
+    printList(){
+        let current = this.head;
        
-//         while (current) {
-//             console.log(current.value);
-//             current=current.next;
-//         }
+        while (current) {
+            console.log(current.value);
+            current=current.next;
+        }
         
-//     }
-// }
+    }
+}
 
 
-// let queue = new Queue();
-// queue.enqueue("m");
-// queue.enqueue("a");
-// queue.enqueue("m");
-// // queue.enqueue("o");
-// // queue.enqueue("u");
-// // queue.enqueue("n");
-// queue.printList();
+let queue = new Queue();
+queue.enqueue("m");
+queue.enqueue("a");
+queue.enqueue("m");
+// queue.enqueue("o");
+// queue.enqueue("u");
+// queue.enqueue("n");
+queue.printList();
 
-// console.log(queue);
+console.log(queue);
 
-// module.exports=Queue;
+module.exports=Queue;

@@ -1,65 +1,63 @@
-// "use strict";
 
-// const Stack =require('../stack');
+"use strict";
 
-// describe("Stack  ", () => {
+const Stack = require("../stack");
 
-//     it("Can successfully push onto a stack", () => {
-//         let stack = new Stack();
-//         stack.push(6);
-//         stack.push(1);
-//         expect(stack.top.value).toBe(1);
-//     });
+describe("Stack Tests ", () => {
+  it("Can successfully push onto a stack", () => {
+    let stack = new Stack();
+    stack.push(19);
+    stack.push(27);
+    stack.push(44);
+    expect(stack.top.value).toBe(44);
+  });
 
-//     it("Can successfully push multiple values onto a stack", () => {
-//         let stack = new Stack();
-//         stack.push(10);
-//         stack.push(45);
-//         stack.push(23);
-//         stack.push(68);
-//         expect(stack.top.value).toBe(68);
-//     });
+  it("Can successfully push multiple values onto a stack", () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    expect(stack.top.value).toBe(4);
+  });
 
-//     it("Can successfully pop off the stack", () => {
-//         let stack = new Stack();
-//         stack.push(6);
-//         stack.push(4);
-//         stack.push(2);
-//         stack.pop();
-//         expect(stack.top.value).toBe(4);
-//         expect(stack.pop()).toBe(4);
-//     });
+  it("Can successfully pop off the stack", () => {
+    let stack = new Stack();
+    stack.push(4);
+    stack.push(7);
+    stack.pop();
+    expect(stack.top.value).toBe(4);
+  });
 
-//     it("Can successfully empty a stack after multiple pops", () => {
-//         let stack = new Stack();
-//         stack.push(64);
-//         stack.push(85);
-//         stack.push(35);
-//         stack.push(11);
-//         stack.pop();
-//         stack.pop();
-//         stack.pop();
-//         stack.pop();
-//         expect(stack.top).toBe(null);
-//     });
+  it("Can successfully empty a stack after multiple pops", () => {
+    let stack = new Stack();
+    stack.push("a");
+    stack.push("b");
+    stack.push("c");
+    stack.push("d");
+    stack.pop();
+    stack.pop();
+    stack.pop();
+    stack.pop();
+    expect(stack.top).toBe(null);
+  });
 
-//     it("Can successfully peek the next item on the stack", () => {
-//         let stack = new Stack();
-//         stack.push(9);
-//         stack.push(8);
-//         stack.push(7);
+  it("Can successfully peek the next item on the stack", () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
 
-//         expect(stack.peek()).toBe(7);
-//     });
+    expect(stack.peek()).toBe(2);
+  });
 
-//     it("Can successfully instantiate an empty stack", () => {
-//         let stack = new Stack();
-//         let Stack2 = new Stack();
-//         Stack2.push(7);
-//         Stack2.push(54);
+  it("Can successfully instantiate an empty stack", () => {
+    let stack = new Stack();
+    let newStack = new Stack();
 
-//         expect(stack).toBeInstanceOf(Stack);
-//         expect(Stack2.isEmpty()).toBe("the stack have values");
-    
-//     });
-// });
+    newStack.push(50);
+
+    expect(stack).toBeInstanceOf(Stack);
+    expect(newStack.isEmpty()).toBe("the stack have values");
+  });
+});

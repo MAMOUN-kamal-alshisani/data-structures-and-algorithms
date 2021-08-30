@@ -3,33 +3,45 @@ class Stack{
     constructor(value,next=null){
         this.value=value;
         this.next=next;
-        this.top=null
+        this.top=null;
+       this.length=0;
+        this.down=null;
+        
     }
 
     push(value){
 let stack= new Stack(value);
-if(this.top){
-stack.next =this.top;
-this.top=stack;
+if(this.length ===0){
+this.top =stack;
+this.down=stack;
 
 
 
-}
+}else{
+
+let first=this.top;
 this.top= stack
+this.top.next= first
+}
 
+this.length++;
+return this.length;
     }
 
 pop(){
 
-    if(this.top){
-      let current = this.top;
-     let poped = this.top.value;
-        this.top=current.next;
-        return poped;
+    if(this.length == 0)
     
-        }
-       throw new Error('empty stack');
+        return null;
 
+    let first=this.top;
+        
+  if(this.length == 1)
+this.down=null;
+this.top = this.top.next;
+    this.length--;
+    return first;
+  
 }
 
 peek(){
