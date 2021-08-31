@@ -7,9 +7,9 @@
 
 
 
+## Whiteboard 
 
-
-![](challenge-12.jpg)
+![](c.jpg)
 
 
 
