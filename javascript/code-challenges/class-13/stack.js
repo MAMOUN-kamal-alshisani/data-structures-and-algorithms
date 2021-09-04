@@ -44,29 +44,21 @@ this.top = this.top.next;
   
 }
 
-peek(){
-
-let val;
-
-if(this.top){
-
-val=this.top.value;
-return val
-
-}
-
-throw new Error('empty stack');
-
-
-}
-isEmpty(){
-    if(!this.top){
-        throw new Error('this stack empty stack'); 
+peek() {
+    let value;
+    if (this.top) {
+      value = this.top.value;
+      return value;
     }
-    return 'the stack have values';
+}
+isEmpty() {
+    if (!this.top) {
+      return false;
+    }
+    return true;
+  }
 }
 
-}
 
 
 
@@ -84,3 +76,66 @@ console.log(stack.top.next);
 
 module.exports= Stack;
     
+// "use strict";
+
+// const Node = require("./node");
+
+// class Stack {
+//   constructor() {
+//     this.first = null;
+//     this.last = null;
+//     this.length = 0;
+//   }
+
+//   push(value) {
+//     let newNode = new Node(value);
+//     if (this.length === 0) {
+//       this.first = newNode;
+//       this.last = newNode;
+//     } else {
+//       let temp = this.first;
+//       this.first = newNode;
+//       this.first.next = temp;
+//     }
+//     this.length++;
+//     return this.length;
+//   }
+
+//   pop() {
+//     if (this.length === 0) return null;
+
+//     let temp = this.first;
+
+//     if (this.length === 1) {
+//       this.last = null;
+//     }
+//     this.first = this.first.next;
+//     this.length--;
+//     return temp;
+//   }
+
+//   peek() {
+//     let value;
+//     if (this.first) {
+//       value = this.first.value;
+//       return value;
+//     }
+//     // throw new Error("the stack is empty");
+//   }
+
+//   isEmpty() {
+//     if (!this.first) {
+//       return false;
+//     }
+//     return true;
+//   }
+// }
+
+// // let stack = new Stack();
+// // stack.push(10);
+// // stack.push(15);
+// // stack.push(20);
+
+// // console.log(stack.isEmpty());
+
+// module.exports = Stack;
