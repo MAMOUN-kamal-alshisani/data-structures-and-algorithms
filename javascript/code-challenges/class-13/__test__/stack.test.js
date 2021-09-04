@@ -58,6 +58,6 @@ describe("Stack Tests ", () => {
     newStack.push(50);
 
     expect(stack).toBeInstanceOf(Stack);
-    expect(newStack.isEmpty()).toBe("the stack have values");
+    expect(newStack.isEmpty()).toBe(true);
   });
 });
