@@ -1,4 +1,4 @@
-const Tree = require('../binerytree');
+const Tree = require('../binarytree');
 const Node = require('../node');
 
 describe('tree', () => {

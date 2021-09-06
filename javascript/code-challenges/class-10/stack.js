@@ -3,34 +3,35 @@ class Stack{
     constructor(value,next=null){
         this.value=value;
         this.next=next;
-        this.top=null
+        this.top=null;
+        let stack=[];
+        let maxstack=[];
     }
 
     push(value){
-let stack= new Stack(value);
-if(this.top){
-stack.next =this.top;
-this.top=stack;
+        stack.push(value)
+if(stack.length == 1){
 
-
-
+    maxstack.push(value);
+    return;
 }
-this.top= stack
 
+if(value> maxstack[maxstack.length -1]){
+maxstack.push(value);}
+else{maxstack.push(maxstack[maxstack.length -1])}
+}
+
+
+getMax(){
+
+    return maxstack[maxstack.length -1];
+}
+
+     pop(){
+maxstack.pop();
+stack.pop();
     }
 
-pop(){
-
-    if(this.top){
-      let current = this.top;
-     let poped = this.top.value;
-        this.top=current.next;
-        return poped;
-    
-        }
-       throw new Error('empty stack');
-
-}
 
 peek(){
 
@@ -44,31 +45,37 @@ return val
 }
 
 throw new Error('empty stack');
-
-
 }
+
+
 isEmpty(){
     if(!this.top){
         throw new Error('this stack empty stack'); 
     }
     return 'the stack have values';
 }
-
 }
 
 
 
 let stack = new Stack();
-stack.push(11);
-stack.push(22);
-stack.push(33);
+// stack.push(11);
+// stack.push(22);
+// stack.push(33);
+// stack.pop();
+// console.log(stack.top);
 
-console.log(stack.top.next);
-
-
+push(20);
+console.log((getMax()));
+push(10);
+console.log((getMax()));
+push(50);
+console.log((getMax()));
 
 
 
 
 module.exports= Stack;
-    
+
+
+
