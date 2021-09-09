@@ -3,47 +3,47 @@ class BinaryTree {
         this.root = root;
     }
 
-    preOrder() {// root left right
-        let result = [];
+    // preOrder() {// root left right
+    //     let result = [];
 
-        let recursive = (node) => {
-            result.push(node.value);
-            if (node.left) recursive(node.left);
-            if (node.right) recursive(node.right);
-        }
+    //     let recursive = (node) => {
+    //         result.push(node.value);
+    //         if (node.left) recursive(node.left);
+    //         if (node.right) recursive(node.right);
+    //     }
 
-        recursive(this.root);
+    //     recursive(this.root);
 
-        return result;
-    }
+    //     return result;
+    // }
 
-    postOrder() {// left -> right -> root
-        let result = [];
+    // postOrder() {// left -> right -> root
+    //     let result = [];
 
-        let recursive = (node) => {
-            if (node.left) recursive(node.left);
-            if (node.right) recursive(node.right);
-            result.push(node.value);
-        }
+    //     let recursive = (node) => {
+    //         if (node.left) recursive(node.left);
+    //         if (node.right) recursive(node.right);
+    //         result.push(node.value);
+    //     }
 
-        recursive(this.root);
+    //     recursive(this.root);
 
-        return result;
-    }
+    //     return result;
+    // }
 
-    inOrder() {// left -> root -> right
-        let result = [];
+    // inOrder() {// left -> root -> right
+    //     let result = [];
 
-        let recursive = (node) => {
-            if (node.left) recursive(node.left);
-            result.push(node.value);
-            if (node.right) recursive(node.right);
-        }
+    //     let recursive = (node) => {
+    //         if (node.left) recursive(node.left);
+    //         result.push(node.value);
+    //         if (node.right) recursive(node.right);
+    //     }
 
-        recursive(this.root);
+    //     recursive(this.root);
 
-        return result;
-    }
+    //     return result;
+    // }
 }
 
 

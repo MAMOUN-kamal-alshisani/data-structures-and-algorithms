@@ -1,5 +1,5 @@
 const Node =require('./node')
-const BinaryTree =require('./binerytree')
+const BinaryTree =require('./binarytree')
 
 class BinarySearchTree extends BinaryTree{
 
@@ -69,21 +69,21 @@ return current.value
 
 
 const bst = new BinarySearchTree()
-console.log(bst.add(1));
+// console.log(bst.add(1));
 bst.add(1)
 bst.add(2)
 bst.add(3)
 bst.add(4)
 bst.add(5)
-console.log(bst.findMax());
+// console.log(bst.findMax());
 bst.add(6)
 bst.add(7)
 bst.add(8)
 bst.add(9)
 
 bst.add(15)
-console.log(bst.findMax());
-console.log(bst.contains(1));
-console.log(bst.contains(2));
-console.log(bst.contains(20));
+// console.log(bst.findMax());
+// console.log(bst.contains(1));
+// console.log(bst.contains(2));
+// console.log(bst.contains(20));
 module.exports= BinarySearchTree;
