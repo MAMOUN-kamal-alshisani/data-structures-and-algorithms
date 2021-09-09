@@ -1,56 +1,35 @@
-class Node {
-  constructor(value, left = null, right = null) {
-    this.value = value
-    this.left = left
-    this.right = right
-  }
-}
+"use strict";
 
-// Fizz Buzz
-let fizzBuzz = (value) => {
-  if (value%3 === 0 && value%5 === 0) {
-    value = 'FizzBuzz'
-  } else if (value %3 === 0) {
-    value = 'Fizz'
-  } else if (value %5 === 0) {
-    value = 'Buzz'
-  } else {
-    value = value.toString()
-  }
-  return value
-}
+const BinaryTree = require("./binaryTree");
+const Node = require("./binaryTree");
 
-// traverse tree
-let recaverse = (node) => {
-  if (node === null) return null
-
-  let Value = fizzBuzz(node.value)
-
-  let Nodes = new Node(Value)
-  Nodes.left = recaverse(node.left)
-  Nodes.right = recaverse(node.right)
-
-  return Nodes
-}
-
-//Binary Tree class
-class BinaryTree {
-  constructor() {
-    this.root = null;
+function fizzBuzz(tree) {
+  function main(value) {
+    let THEValue;
+    if (value % 3 === 0 && value % 5 === 0 )  {
+     return THEValue = "FizzBuzz";
+    } else if (value % 5 === 0) {
+     return THEValue = "Buzz";
+    } else if (value % 3 === 0) {
+     return THEValue = "Fizz";
+    } else {
+  //  return THEValue = value.toString();
+    }
+  
   }
 
-  //Fizz Buzz method
-  fizzBuzzTree() {
-    let Tree = new BinaryTree
-
-    //call traverse
-    Tree.root = recaverse(this.root)
-    return Tree
+  function trevers(tree) {
+    let collection = {};
+    for (const key in tree) {
+      const val= tree[key];
+      if (val && typeof val === "object") {
+        collection[key] = trevers(val);
+      } else {
+        collection[key] = main(val);
+      }
+    }
+    return collection;
   }
-
+  return trevers(tree);
 }
-
-module.exports = {
-  Node,
-  BinaryTree
-}
+module.exports = fizzBuzz;
