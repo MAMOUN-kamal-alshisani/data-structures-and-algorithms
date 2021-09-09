@@ -1,65 +1,38 @@
-const { Node, BinaryTree } = require('../fizzBuzz')
+const BinaryTree = require('../binaryTree')
+const Node =require('../binaryTree')
 
-describe('test fizz buzz tree of null', () => {
-  const Tree = new BinaryTree
-  const NewTree = Tree.fizzBuzzTree()
-  it('returns values', () => {
-    expect(NewTree.root).toBeNull()
-  })
-// })
+const fizzBuzz=require('../fizzBuzz')
 
-describe('test fizz buzz tree of one node', () => {
-  const TTree = new BinaryTree
-  const rootNode = new Node(1)
-  TTree.root = rootNode
-  const NewTree = TTree.fizzBuzzTree()
-  it('returns values', () => {
-    expect(NewTree.root.value).toEqual('1')
-  })
-})
 
-describe('test fizz buzz tree of 3', () => {
-  const TTree = new BinaryTree
-  const rootNode = new Node(1)
-  const left = new Node(0)
-  const right = new Node(2)
-  rootNode.left = left
-  rootNode.right = right
-  TTree.root = rootNode
-  const NewTree = TTree.fizzBuzzTree()
-  it('returns values', () => {
-    expect(NewTree.root.value).toEqual('1')
-    expect(NewTree.root.left.value).toEqual('FizzBuzz')
-    expect(NewTree.root.right.value).toEqual('2')
-  })
-  it('original tree is unmodified', () => {
-    expect(TTree.root.value).toEqual(1)
-    expect(TTree.root.left.value).toEqual(0)
-    expect(TTree.root.right.value).toEqual(2)
-  })
-})
+describe("k arrtree", () => {
+  it("if value divisible by 3", () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(3);
+    let result = fizzBuzz(tree);
+    expect(result.root.value).toEqual("Fizz");
+  });
 
-describe('test fizz buzz tree of ', () => {
-  const TTree = new BinaryTree
-  const rootNode = new Node(1)
-  const left = new Node(3)
-  const rightNode = new Node(5)
-  const right = new Node(2)
-  const rightRNode = new Node(15)
-  rightNode.left = right
-  rightNode.right = rightRNode
-  rootNode.left = left
-  rootNode.right = rightNode
-  TTree.root = rootNode
-  const NewTree = TTree.fizzBuzzTree()
-  it('returns values', () => {
-    expect(NewTree.root.value).toEqual('1')
-    expect(NewTree.root.left.value).toEqual('Fizz')
-    expect(NewTree.root.right.value).toEqual('Buzz')
-    expect(NewTree.root.right.left.value).toEqual('2')
-    expect(NewTree.root.right.right.value).toEqual('FizzBuzz')
-  })
-})
+  it("if value divisible by 5", () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(5);
+    let result = fizzBuzz(tree);
+    expect(result.root.value).toEqual("Buzz");
+  });
+
+  it("if value divisible by 5 & 3", () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(15);
+    let result = fizzBuzz(tree);
+    expect(result.root.value).toEqual("FizzBuzz");
+  });
+
+  it("if value not divisible by 5 & 3", () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(7);
+    let result = fizzBuzz(tree);
+    expect(result.root.value).toEqual("7");
+  });
+
 // describe('tree', () => {
 //     let tree = null;
 //     beforeAll(() => {

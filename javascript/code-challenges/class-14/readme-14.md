@@ -1,15 +1,11 @@
 # Stack and a Queue Implementation
 
 
-## code test :
-![](class-11.jpg)
 
 
+## white board
 
-
-
-
-![](white-board11.jpg)
+![](whiteboard14.jpg)
 
 
 
