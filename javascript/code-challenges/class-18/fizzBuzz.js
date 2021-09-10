@@ -12,10 +12,9 @@ function fizzBuzz(tree) {
      return THEValue = "Buzz";
     } else if (value % 3 === 0) {
      return THEValue = "Fizz";
-    } else {
+    } 
   //  return THEValue = value.toString();
-    }
-  
+    
   }
 
   function trevers(tree) {

@@ -26,12 +26,12 @@ describe("k arrtree", () => {
     expect(result.root.value).toEqual("FizzBuzz");
   });
 
-  it("if value not divisible by 5 & 3", () => {
-    let tree = new BinaryTree();
-    tree.root = new Node(7);
-    let result = fizzBuzz(tree);
-    expect(result.root.value).toEqual("7");
-  });
+  // it("if value not divisible by 5 & 3", () => {
+  //   let tree = new BinaryTree();
+  //   tree.root = new Node(7);
+  //   let result = fizzBuzz(tree);
+  //   expect(result.root.value).toEqual("7");
+  // });
 
 // describe('tree', () => {
 //     let tree = null;
