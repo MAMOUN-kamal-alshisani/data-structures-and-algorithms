@@ -1,9 +1,9 @@
 
 
-const SelectionSort=require('../sortSamples')
+const mergesort=require('../mergeSort')
 
 
-describe("k arrtree", () => {
+describe("mergeSort", () => {
   it("sort the array", () => {
     let array = [9,16,34,21,65,1,67,100,88]
 
