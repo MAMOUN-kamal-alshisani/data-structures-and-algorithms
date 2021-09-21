@@ -1,55 +1,4 @@
-// 'use strict';
-// const Node =require('./node')
-// class LinkedList{
 
-// constructor(){
-// this.head=null;
-// this.length=0
-// }
-
-// insert(value){
-
-//     this.head=new Node(value, this.head);
-//     this.length++
-//     }
-
-// append(value){
-
-//     const node = new Node(value);
-//     if(!this.head){
-// this.head =node;
-// return this;
-
-//     }
-//     let currently=this.head;
-//     while (currently.next){
-
-// currently=currently.next;
-//     }
-//     currently.next =node;
-// }
-
-// toString() {
-//     let result = "";
-//     let current = this.head;
-  
-//     while (current) {
-//       result += `${current.value}${current.next ? ", " : ""}`;
-//       current = current.next;
-//     }
-  
-//     return result;
-//   }
-// }
-// module.exports = LinkedList;
-
-// const LL= new LinkedList()
-// LL.append(1);
-// LL.append(10);
-// LL.append(-1);
-// console.log(LL.toString());
-
-'use strict';
 const Node=require('./node');
 
 class Linkedlist{
@@ -70,9 +19,24 @@ insert(data){
 const node= new Node(data, this.head)
     this.head=node
     
-    
-    
     }
-    
+ addtwonumbers(l1,l2){
+     let a =[]
+while (l1 !=null || l2 !=null){
+
+    let v1 = 0
+    let v2 = 0
+    if(l1 != null)v1=l1.value
+    if(l2 != null)v2=l2.value
+let sum = v1 + v2
+a.push(sum)
+    if(l1 != null)l1=l1.next
+    if(l2 != null)l2=l2.next
+}
+console.log(a);
+    }
 }
 
+const LL= new LinkedList()
+
+LL.addtwonumbers([16354],[34343])
