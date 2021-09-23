@@ -114,7 +114,19 @@ reverselist(k){
   }
 }
 
+dupicate(value){
 
+  let current=this.head;
+let arr=[]
+  while(current !=null && current.next !=null){
+
+    if(current.value === current.next.value){
+      current.next === current.next.next
+      arr.push(current.value)
+    }else{current=current.next}
+  }
+  return arr
+}
 
 printList(){
     let current = this.head;
@@ -131,18 +143,18 @@ printList(){
 
 const LL= new LinkedList()
 
-LL.insert(10);
+// LL.insert(10);
 // console.log(LL)
-LL.insert(20);
-LL.append(1);
-LL.append(2);
-LL.insertafter(656,2)
-LL.insertbefore(3434,4)
+// LL.insert(20);
+// LL.append(1);
+// LL.append(2);
+// LL.insertafter(656,2)
+// LL.insertbefore(3434,4)
 // coinsertlastnsole.log(LL)
 // LL.insert(20);
 // console.log(LL)
-
-console.log(LL.reverselist(2))
+console.log(LL.dupicate(2,3,4,5,1))
+// console.log(LL.reverselist(2))
 module.exports = LinkedList;
 
 

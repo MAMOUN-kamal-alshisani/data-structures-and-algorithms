@@ -4,7 +4,8 @@ class LinkedList{
 
 constructor(){
 this.head=null;
-this.length=0;
+this.tail=null;
+this.size=0;
 }
 
 append(value) {
@@ -21,9 +22,14 @@ append(value) {
   }
 
 insert(value){
+let node= new Node(value)
 
-this.head=new Node(value, this.head);
-this.length++
+node.next = this.head;
+this.head = node;
+if(this.size == 0){
+  this.tail = node;
+}
+this.size +=1
 }
 
 
@@ -166,28 +172,28 @@ const LL= new LinkedList()
 LL.insert(10);
 // console.log(LL)
 LL.insert(20);
-LL.append(1);
-LL.append(2);
+// LL.append(1);
+// LL.append(2);
 // LL.insertafter(656,2)
 // LL.insertbefore(3434,4)
 // coinsertlastnsole.log(LL)
 // LL.insert(20);
-// console.log(LL)
+console.log(LL)
 
 // console.log(LL.reverselist(2))
 
 let List1 = new LinkedList();
-List1.insert(1);
-List1.append(3);
-List1.append(2);
-// List1.append(7);
-// List1.append(11);
-let List2 = new LinkedList();
-List2.insert(5);
-List2.append(9);
-List2.append(4);
-
-console.log(LL.zipList(List1, List2).toString());
+// List1.insert(1);
+// List1.append(3);
+// List1.append(2);
+// // List1.append(7);
+// // List1.append(11);
+// let List2 = new LinkedList();
+// List2.insert(5);
+// List2.append(9);
+// List2.append(4);
+console.log(LL.insert());
+// console.log(LL.zipList(List1, List2).toString());
 module.exports = LinkedList;
 
 
