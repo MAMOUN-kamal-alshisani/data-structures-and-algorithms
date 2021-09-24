@@ -2,7 +2,7 @@
 
 ## tests :
 
-![](challenge-28.jpg)
+![](hashtableTests.jpg)
 
 
 
