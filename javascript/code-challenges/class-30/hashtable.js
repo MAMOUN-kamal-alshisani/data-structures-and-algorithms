@@ -166,6 +166,7 @@ Ht.set('Mamoun','Citizen');
 
 
 
+
 // console.log(myhash.get("John")); // [ 'Canada', 300 ]
 // console.log(myhash.get("Cathy")); // [ 'France', 100 ]
 // console.log(myhash.get("Ovi")); 
