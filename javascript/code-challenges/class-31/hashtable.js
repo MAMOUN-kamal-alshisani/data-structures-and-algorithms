@@ -114,7 +114,6 @@ class HashTable {
     return hash % this.map.length;
   }
 
-
   set(key, value) {
       let hash = this._hash(key);
 
@@ -147,36 +146,84 @@ return false;
 
 }
 
+
+
+repeatedword(string){
+ let HT= new HashTable(string.length)
+let RepeatedWord =string.split(" ");
+
+for(let i =0 ;i<=RepeatedWord.length; i++){
+
+  if (!HT.contain(RepeatedWord[i])) {
+    HT.set( RepeatedWord[i]);
+  } else {
+    return RepeatedWord[i];
+  }
 }
+return null;
+}
+
+ 
+
+// return RepeatedWord ;
+// while(this.size != 0){
+
+//   if(this.contain(RepeatedWord)){
+//     return RepeatedWord
+//   }
+//   else {return null}
+// }
+// RepeatedWord.map(val=>{
+// if(val.contain(key)){
+
+//   return RepeatedWord
+// }
+
+// })
+// return null
+// for(let i = 0 ;i<=RepeatedWord.length ;i++){
+
+
+// }
+
+    
+  // }
+
+
+  
+}
+
 
 let Ht = new HashTable(127)
 
+// Ht.set('france','Country');
+// Ht.set('paris','Capital');
+// Ht.set('jordan','Country');
+// Ht.set('Amman','Capital');
+// Ht.set('Az_Zarqa','City');
+// Ht.set('As_Sukhnah','Country_side');
+// Ht.set('Mamoun','Citizen');
 
 
-Ht.set('france','Country');
-Ht.set('paris','Capital');
-Ht.set('jordan','Country');
-Ht.set('Amman','Capital');
-Ht.set('Az_Zarqa','City');
-Ht.set('As_Sukhnah','Country_side');
-Ht.set('Mamoun','Citizen');
+let str1ng ="hello hey hello hey hey";
 
-
-
-
-
+let str2ng ="Once upon a time, there was a brave princess who...";
+// let string2="It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
+console.log("str1ng: ",Ht.repeatedword(str1ng));
+console.log("str2ng: ",Ht.repeatedword(str2ng));
+// console.log("paragraph 2: ",Ht.repeatedword(string2));
 
 // console.log(myhash.get("John")); // [ 'Canada', 300 ]
 // console.log(myhash.get("Cathy")); // [ 'France', 100 ]
 // console.log(myhash.get("Ovi")); 
 
 
-Ht.map.forEach( (data,i) => {
-console.log(i, data && data.values());
-});
-console.log(Ht.contain('44'));
-console.log(Ht.get('Mamoun'));
-console.log(Ht.get('As_Sukhnah'));
+// Ht.map.forEach( (data,i) => {
+// console.log(i, data && data.values());
+// });
+// console.log(Ht.contain('44'));
+// console.log(Ht.get('Mamoun'));
+// console.log(Ht.get('As_Sukhnah'));
 
 
 
