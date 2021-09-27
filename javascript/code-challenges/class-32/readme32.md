@@ -1,8 +1,8 @@
 # Stack and a Queue Implementation
 
-## tests :
+## whiteboard :
 
-![](challenge31.jpg)
+![](29.jpg)
 
 
 

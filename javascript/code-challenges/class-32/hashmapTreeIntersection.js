@@ -1,9 +1,11 @@
 
 
 class Node {
-  constructor(value) {
+  constructor(value, left= null, right=null) {
       this.value = value;
       this.next = null;
+      this.left =left
+      this.right =right
   }
 }
 
@@ -101,22 +103,30 @@ class BinaryTree {
   TreeIntersection(firstTreeBranches, secondTreeBranches){
 
 let array =[]
-if(!firstTreeBranches || !secondTreeBranches ){
 
-  throw new Error('there is no root to comapare')
-}
+let travers = (nodeOne, nodeTwo) => {
+  if(!nodeOne || !nodeTwo ){
 
-if(firstTreeBranches && secondTreeBranches){
-
-  if(firstTreeBranches.value ==secondTreeBranches.value){
-
-    array.push(firstTreeBranches)
-
-}
-return array;
- }
+    throw new Error('no compatiable nodes')
+  }
+  if (nodeOne && nodeTwo) {
+    if(nodeOne.value === nodeTwo.value){
+      array.push(nodeOne.value);
+    } 
+    if(nodeOne.left, nodeTwo.left )
+   { travers(nodeOne.left, nodeTwo.left)}
+  
+   if(nodeOne.right, nodeTwo.right )
+   { travers(nodeOne.right, nodeTwo.right)}
+  
+   return array;
+  }
  
 }
+travers (firstTreeBranches, secondTreeBranches)
+return array;
+};
+
 
 
 
